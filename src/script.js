@@ -36,16 +36,17 @@ const waterMaterial = new THREE.ShaderMaterial({
     vertexShader: waterVertex,
     fragmentShader: waterFragment,
     wireframe: true,
+    transparent: true,
     uniforms: {
         uTime: { value: 0 },
 
-        uWaveSpeed: { value: 0.05 },
+        uWaveSpeed: { value: 0.005 },
         uBigWavesElevation: { value: 0.2 },
         uBigWavesFrequency: { value: new THREE.Vector2(4, 1.5) },
 
         uSmallWavesElevation: { value: 0.15 },
         uSmallWavesFrequency: { value: 3 },
-        uSmallWavesSpeed: { value: 0.2 },
+        uSmallWavesSpeed: { value: 0.05 },
         uSmallWavesIterations: { value: 6 },
 
         uDepthColor: { value: new THREE.Color(debugObject.depthColor) },
@@ -110,7 +111,7 @@ window.addEventListener('resize', () => {
  */
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-camera.position.set(1, 1, 1)
+camera.position.set(1, 0.6, 1)
 scene.add(camera)
 
 // Controls
