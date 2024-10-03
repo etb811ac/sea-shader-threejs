@@ -13,6 +13,8 @@ import waterFragment from './shaders/water/fragment.glsl'
 const gui = new GUI({ width: 340 })
 const debugObject = {}
 
+gui.close()
+
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
 
@@ -26,8 +28,8 @@ const scene = new THREE.Scene()
 const waterGeometry = new THREE.PlaneGeometry(8, 8, 700, 700)
 
 //Color
-debugObject.depthColor = '#186991'
-debugObject.surfaceColor = '#9bd8ff'
+debugObject.depthColor = '#6D59CF'
+debugObject.surfaceColor = '#D92FA2'
 
 // Material
 const waterMaterial = new THREE.ShaderMaterial({
@@ -37,19 +39,19 @@ const waterMaterial = new THREE.ShaderMaterial({
     uniforms: {
         uTime: { value: 0 },
 
-        uWaveSpeed: { value: 0.9 },
+        uWaveSpeed: { value: 0.05 },
         uBigWavesElevation: { value: 0.2 },
         uBigWavesFrequency: { value: new THREE.Vector2(4, 1.5) },
 
         uSmallWavesElevation: { value: 0.15 },
         uSmallWavesFrequency: { value: 3 },
         uSmallWavesSpeed: { value: 0.2 },
-        uSmallWavesIterations: { value: 4 },
+        uSmallWavesIterations: { value: 6 },
 
         uDepthColor: { value: new THREE.Color(debugObject.depthColor) },
         uSurfaceColor: { value: new THREE.Color(debugObject.surfaceColor) },
-        uColorOffset: { value: 0.08 },
-        uColorMultiplier: { value: 5 }
+        uColorOffset: { value: 0.36 },
+        uColorMultiplier: { value: 1.284 }
     },
     side: THREE.DoubleSide
 })
