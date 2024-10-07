@@ -25,28 +25,28 @@ const scene = new THREE.Scene()
  * Water
  */
 // Geometry
-const waterGeometry = new THREE.PlaneGeometry(8, 8, 700, 700)
+const waterGeometry = new THREE.PlaneGeometry(10, 10, 900, 900)
 
 //Color
-debugObject.depthColor = '#6D59CF'
-debugObject.surfaceColor = '#D92FA2'
+debugObject.depthColor = '#665dea'
+debugObject.surfaceColor = '#ffb35c'
 
 // Material
 const waterMaterial = new THREE.ShaderMaterial({
     vertexShader: waterVertex,
     fragmentShader: waterFragment,
-    wireframe: true,
+    wireframe: false,
     transparent: true,
     uniforms: {
         uTime: { value: 0 },
 
-        uWaveSpeed: { value: 0.005 },
+        uWaveSpeed: { value: 0.2 },
         uBigWavesElevation: { value: 0.2 },
         uBigWavesFrequency: { value: new THREE.Vector2(4, 1.5) },
 
         uSmallWavesElevation: { value: 0.15 },
         uSmallWavesFrequency: { value: 3 },
-        uSmallWavesSpeed: { value: 0.05 },
+        uSmallWavesSpeed: { value: 0.1 },
         uSmallWavesIterations: { value: 6 },
 
         uDepthColor: { value: new THREE.Color(debugObject.depthColor) },
@@ -132,7 +132,7 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
  */
 const clock = new THREE.Clock()
 
-gsap.to(waterMaterial,{wireframe: true, duration:3})
+gsap.from(camera.position,{z: 0, y: 4,  duration:15})
 
 const tick = () => {
     const elapsedTime = clock.getElapsedTime()
