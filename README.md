@@ -3,8 +3,11 @@
 <p align="center">An animated ocean surface built from scratch with custom GLSL shaders — layered waves, depth-based color, and per-vertex displacement, all running on the GPU.</p>
 
 <p align="center">
-  <!-- TODO: replace with your deployed demo URL -->
-  🔗 <b>Live Demo:</b> <i>coming soon</i>
+  <a href="https://sea-shader-eacuna.netlify.app/"><img src="https://img.shields.io/badge/▶%20Live%20Demo-Open-FF4D00?style=for-the-badge" alt="Live Demo"></a>
+</p>
+
+<p align="center">
+  <img src=".github/preview.gif" alt="Sea shader preview" width="640">
 </p>
 
 <p align="center">
